@@ -1,5 +1,12 @@
 # Map of Oregon Biomes
 
+L.geoJSON(data, {
+    style: function (feature) {
+        return {color: feature.properties.color};
+    }
+}).bindPopup(function (layer) {
+    return layer.feature.properties.description;
+}).addTo(map);
 {
   "type": "FeatureCollection",
   "features": [
